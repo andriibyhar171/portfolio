@@ -1,0 +1,13 @@
+yesterday-вчера
+today-сегодня
+day-день
+somewhere-где-то
+when-когда
+night-ночь
+chair-стул
+table-стол
+flower-цветок
+банджо-banjo
+банджул-banjul
+бандикут-bandicoot
+feet-стопы

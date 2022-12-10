@@ -1,0 +1,190 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+
+namespace Slovary
+{
+    class Program
+    {
+        public static void Dict(string args)
+        {
+            FileStream filethread = new FileStream("C:\\Users\\bbbss\\source\\repos\\Slovary\\Slovary\\dict.txt", FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
+            StreamReader str = new StreamReader(filethread);
+            string data = str.ReadToEnd();
+            string[] dataArray = data.Split(new char[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < dataArray.Length; i++)
+            {
+                Console.WriteLine(dataArray[i]);
+
+            }
+            str.Close();
+        }
+
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+            point1:
+                Console.WriteLine("__Phone__\n  Menu:\n\n1. E - Translation\n" +
+                    "3. R - Dictionary\n4. A - Add\n5. D - Delete\n[Q] - Exit Phone\n\nInput:");
+                string wrd = Console.ReadLine();
+                Console.Clear();
+                if (wrd == " ")
+                {
+                    Console.Clear();
+                    continue;
+                }
+                switch (wrd)
+                {
+                    case ("E"):
+                        
+                        Console.WriteLine("\t  ____Translate_____\n\t  [Q] to end program\n\t   To return type R\n\tType word to translate:");
+                        while (true)
+                        {
+                            StreamReader sr = new StreamReader("C:\\Users\\bbbss\\source\\repos\\Slovary\\Slovary\\dict.txt");
+                            Dictionary<string, string> dictionary = new Dictionary<string, string>();
+                            string[] split;
+                        
+                            while (!sr.EndOfStream)
+                            {
+                                split = sr.ReadLine().Split(new char[] { '-', ',' }, StringSplitOptions.RemoveEmptyEntries);
+                                if (!dictionary.ContainsKey(split[0]))
+                                {
+                                    dictionary.Add(split[0], split[1]);
+                                    dictionary.Add(split[1], split[0]);
+
+                                }
+                            }
+                            sr.Close();
+                            sr.Dispose();
+                            string word = Console.ReadLine();
+                            switch (word)
+                            {
+                                case ("q"):
+                                    Environment.Exit(0);
+                                    break;
+                                case ("Q"):
+                                    Console.Clear();
+                                    Environment.Exit(0);
+                                    break;
+                                case (" "):
+                                    Console.WriteLine("Wrong symbol\n\n");
+                                    continue;
+                                case ("R"):
+                                    Console.Clear();
+                                    goto point1;
+                                    break;
+
+                            };
+                            if (dictionary.ContainsKey(word))
+                            {
+                                Console.WriteLine(dictionary[word]);
+                            }
+                            else
+                            {
+                                Console.WriteLine("This word doesn't exist");
+                            }
+                            Console.WriteLine("-------------------");
+                        }
+                        Console.Clear();
+                        continue;
+
+                    case ("R"):
+                        while (true)
+                        {
+
+                            Console.WriteLine("__Dictionary__\n");
+                            Dict("");
+                            Console.WriteLine(" \n[Q] - Exit\n[R] - Return\nInput:");
+                            string de = Console.ReadLine();
+                            if (de == "Q")
+                            {
+                                Console.Clear();
+                                Environment.Exit(0);
+                            } else if (de == "R")
+                            {
+                                Console.Clear();
+                                goto point1;
+                            }
+                            continue;
+                        }
+                        break;
+                    case ("Q"):
+                        Console.Clear();
+                        Environment.Exit(0);
+                        break;
+                    case ("A"):
+                        while (true)
+                        {
+                            Console.WriteLine("List of words:\n");
+                            Dict("");
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Type a word-слово to add to dictionary:\nTo exit type Q\nTo return type R\nInput:");
+                            string text = Console.ReadLine();
+                            switch (text)
+                            {
+                                case ("Q"):
+                                    Console.Clear();
+                                    Environment.Exit(0);
+                                    break;
+                                case (" "):
+                                    Console.Clear();
+                                    continue;
+                                    break;
+                                case ("R"):
+                                    Console.Clear();
+                                    goto point1;
+                                    break;
+                            }
+                            using (StreamWriter sw = new StreamWriter("C:\\Users\\bbbss\\source\\repos\\Slovary\\Slovary\\dict.txt", true))
+                            {
+
+                                sw.WriteLine(text);
+
+                            }
+                            Console.Clear();
+                            continue;
+                        }
+                    case ("D"):
+                        while (true)
+                        {
+                            Console.WriteLine("List of words:\n");
+                            Dict("");
+                            Console.WriteLine(" ");
+                            string[] lines = File.ReadAllLines("C:\\Users\\bbbss\\source\\repos\\Slovary\\Slovary\\dict.txt");
+                            Console.WriteLine("Type a word-word to delete it from dictionary:\nTo exit type Q\nTo return type R\nInput:");
+                            string dn = Console.ReadLine();
+                            switch (dn)
+                            {
+                                case ("Q"):
+                                    Console.Clear();
+                                    Environment.Exit(0);
+                                    break;
+                                case (" "):
+                                    Console.Clear();
+                                    continue;
+                                    break;
+                                case ("R"):
+                                    Console.Clear();
+                                    goto point1;
+                                    break;
+                            }
+                            
+
+                            using (StreamWriter sw = new StreamWriter("C:\\Users\\bbbss\\source\\repos\\Slovary\\Slovary\\dict.txt"))
+                            {
+                                foreach (var line in lines.Where(x => x != dn))
+                                    sw.WriteLine(line);
+                            }
+                            Console.WriteLine("Word has been deleted");
+                            Console.Clear();
+                            continue;
+                        }
+                }
+            }
+        }
+    }
+}
