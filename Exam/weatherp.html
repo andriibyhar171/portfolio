@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="img/mero-white.png">
+  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Weather Report</title>
+</head>
+<body>
+
+	<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+		<a href="Exam6.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+		  <img src="img/mero.png" class="bi me-2" width="50" height="50"/>
+		  <span class="fs-4">Weather Report</span>
+		</a>
+		<div class="col-md-3 text-center">
+			<a href="Exam6.html" class="btn btn-outline-primary me-2">Home</a>
+			<a href="faq.html" class="btn btn-outline-primary me-2">FAQs</a>
+			<a href="weatherp.html" class="btn btn-outline-primary me-2">Weather</a>
+			<a href="login.html" class="btn btn-outline-primary me-2">Login</a>
+			<a href="sign.html" class="btn btn-outline-primary me-2">Sign-Up</a>
+		</div>
+	  </header>
+
+<h2 class="text-center1">Enter the city</h2>
+
+<div class="butt text-center">
+	<input type="text" id="city" placeholder="Enter on English"/>
+	<button id="cityB" onclick="showDateTime();">OK</button>
+</div>
+
+
+<p class="text-center2">4-day Weather Report
+	<span id="cityC"></span>
+<p>	
+	<div id="tablo">
+
+
+		<div class="day">
+			  <img id="tmp4"/><br>
+			 <p id="day1"></p>
+			 <div id="demo7"></div>
+			 <div id="demo5" ></div>
+			 <div id="demo6"></div>
+			 <div id="demo4"></div>
+		</div>
+
+		<div class="day">
+			   <img id="tmp5"/><br>
+			 <p id="day2"></p>
+			 <div id="demo10"></div>
+			 <div id="demo11"></div>
+			 <div id="demo8"></div>
+			 <div id="demo9"></div>
+		</div> 
+
+		<div class="day">
+			   <img id="tmp6"/><br>
+			 <p id="day3"></p>
+			 <div id="demo14"></div>
+			 <div id="demo15"></div>
+			 <div id="demo12"></div>
+			 <div id="demo13"></div>
+		</div> 
+
+		<div class="day">
+			   <img id="tmp7"/><br>
+			 <p id="day4"></p>
+			 <div id="demo18"></div>
+			 <div id="demo19"></div>
+			 <div id="demo16"></div>
+			 <div id="demo17"></div>
+		</div>
+
+  	</div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="weather.js"></script>
+</body>
+</html>
+
