@@ -1,0 +1,101 @@
+﻿<Window x:Class="Resume.Resume2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Resume"
+        mc:Ignorable="d"
+        Title="Мастер резюме" Height="381.8" Width="870.8" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" FontWeight="Bold" Icon="icon_resume.png">
+    <Window.Resources>
+
+        <ControlTemplate x:Key="txt2" TargetType="{x:Type TextBoxBase}">
+            <Border Background="{TemplateBinding Background}" 
+                x:Name="Bd" BorderBrush="Black"
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                <ScrollViewer x:Name="PART_ContentHost"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="Width" Value="Auto">
+                    <Setter Property="MinWidth" Value="100"/>
+                </Trigger>
+                <Trigger Property="Height" Value="Auto">
+                    <Setter Property="MinHeight" Value="20"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="passwordbox" TargetType="{x:Type PasswordBox}">
+            <Border Background="{TemplateBinding Background}" 
+        x:Name="Bd" BorderBrush="Black"
+        BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                <ScrollViewer Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="Width" Value="Auto">
+                    <Setter Property="MinWidth" Value="100"/>
+                </Trigger>
+                <Trigger Property="Height" Value="Auto">
+                    <Setter Property="MinHeight" Value="20"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid Margin="0,0,-7,-2.6">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF00BAFF" Offset="0.173"/>
+                <GradientStop Color="#FFEBFF00" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBox x:Name="name2" Template="{StaticResource txt2}"  HorizontalAlignment="Left" Height="30" Margin="103,13,0,0" TextWrapping="Wrap" Text="John Doe" VerticalAlignment="Top" Width="143"/>
+        <TextBox x:Name="street2" Template="{StaticResource txt2}" HorizontalAlignment="Left" Height="30" Margin="103,48,0,0" TextWrapping="Wrap" Text="198 Hospital St #97" VerticalAlignment="Top" Width="143"/>
+        <TextBox x:Name="phone2" Template="{StaticResource txt2}" HorizontalAlignment="Left" Height="30" Margin="103,90,0,0" TextWrapping="Wrap" Text="(810) 793-6578" VerticalAlignment="Top" Width="143"/>
+        <TextBox x:Name="email2" Template="{StaticResource txt2}" HorizontalAlignment="Left" Height="30" Margin="103,127,0,0" TextWrapping="Wrap" Text="jarvis989@gmail.com" VerticalAlignment="Top" Width="143"/>
+        <TextBox x:Name="obj2" Template="{StaticResource txt2}" HorizontalAlignment="Left" Margin="390,16,0,332.2" TextWrapping="Wrap" Text="Highly effective Human Resources manager and SHRM-CP with 6 years experience. Seeking to increase employee retention for Twitter. At Abaveo, Inc., increased retention 25%. Cut lead time for recruiting by 46%. Raised employee effectiveness by 18%, and training participation by 15%." Width="124"/>
+        <TextBox x:Name="schl_nam2" Template="{StaticResource txt2}" HorizontalAlignment="Left" Height="65" Margin="697,7,0,0" TextWrapping="Wrap" Text="Corrigan-Camden Junior High School, Corrigan,  Texas" VerticalAlignment="Top" Width="128"/>
+        <TextBox x:Name="dat_of_gradu2" Template="{StaticResource txt2}" HorizontalAlignment="Left" Height="41" Margin="697,85,0,0" TextWrapping="Wrap" Text="High School" VerticalAlignment="Top" Width="128"/>
+        <TextBox x:Name="grade_point_average2" Template="{StaticResource txt2}" HorizontalAlignment="Left" Height="39" Margin="428,289,0,0" TextWrapping="Wrap" Text="5.0" VerticalAlignment="Top" Width="45" RenderTransformOrigin="0.849,0.797" FontSize="16"/>
+        <TextBox x:Name="skills" Template="{StaticResource txt2}" HorizontalAlignment="Left" Height="40" Margin="390,96,0,0" TextWrapping="Wrap" Text="Verbal and Written Communication, Storytelling, Critical Thinking, Public Speaking " VerticalAlignment="Top" Width="124"/>
+        <TextBox x:Name="date_from2" Template="{StaticResource txt2}" HorizontalAlignment="Left" Height="44" Margin="169,211,0,0" TextWrapping="Wrap" Text="015/01/2011 -- 028/03/2022" VerticalAlignment="Top" Width="124"/>
+        <TextBox x:Name="job_title2" Template="{StaticResource txt2}" HorizontalAlignment="Left" Height="74" Margin="169,270,0,0" TextWrapping="Wrap" Text="Teacher, High School, 238 Vera Wilson Rd Corrigan Texas" VerticalAlignment="Top" Width="124"/>
+        <TextBox x:Name="respons2" Template="{StaticResource txt2}" HorizontalAlignment="Left" Height="36" Margin="389,141,0,0" TextWrapping="Wrap" Text="A teacher is responsible for preparing lesson plans and educating students at all levels. Their duties include assigning homework, grading tests, and documenting progress. Teachers must be able to instruct in a variety of subjects and reach students with engaging lesson plans." VerticalAlignment="Top" Width="124"/>
+        <TextBox x:Name="hobbie2" Template="{StaticResource txt2}" Text="Paintball, football, youth sports" HorizontalAlignment="Left" Height="34" Margin="390,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"/>
+        <TextBox x:Name="active" Template="{StaticResource txt2}" HorizontalAlignment="Left" Height="43" Margin="697,141,0,0" TextWrapping="Wrap" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur sagittis tristique. Vestibulum quis rutrum est. Cras id felis nunc. Nulla aliquam tincidunt orci eget vehicula. Maecenas vestibulum nulla eu ex varius malesuada. Vivamus sit amet convallis mauris. Donec et risus vel neque auctor tincidunt. Donec accumsan fermentum condimentum." VerticalAlignment="Top" Width="128"/>
+        <Label Content="ПІБ:" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        <Label Content="Адрес:" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        <Label Content="Телефон:" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        <Label Content="E-mail:" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        <Label Content="Цілі:" HorizontalAlignment="Left" Margin="321,13,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        <Label Content="Школа, &#xD;&#xA;місто, &#xD;&#xA;область:" HorizontalAlignment="Left" Margin="600,4,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        <Label Content="Освіта, &#xD;&#xA;дата випуску:" HorizontalAlignment="Left" Margin="558,73,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        <Label Content="Середній &#xD;&#xA;     бал:" HorizontalAlignment="Left" Margin="319,281,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black" Width="84"/>
+        <Label Content="Дата працевлаш.&#xD;&#xA; - кінець:" HorizontalAlignment="Left" Margin="10,207,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        <Label Content="Робота, &#xD;&#xA;компанія,&#xD;&#xA;розташування:" HorizontalAlignment="Left" Margin="10,265,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        <Label Content="Брифінг &#xD;&#xA;роботи:" HorizontalAlignment="Left" Margin="306,129,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        <Label Content="Хоббі:" HorizontalAlignment="Left" Margin="321,56,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        <Label Content="Вміння:" HorizontalAlignment="Left" Margin="301,91,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        <Label Content="Діяльність:" HorizontalAlignment="Left" Margin="588,148,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        <Label Content="Ім'я файла:" HorizontalAlignment="Left" Margin="592,246,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black" Height="33" Width="120"/>
+        <Button Content="Створити" HorizontalAlignment="Left" Margin="727,296,0,0" VerticalAlignment="Top" Width="120" Click="Makepdf2" Background="White" Height="29"/>
+        <TextBox x:Name="names2" Template="{StaticResource txt2}" HorizontalAlignment="Left" Height="30" Margin="727,246,0,0" TextWrapping="Wrap" Text="Resume2" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Повернутися" HorizontalAlignment="Left" Margin="592,296,0,0" VerticalAlignment="Top" Width="120" Click="Ret2" Background="White" Height="29"/>
+        <ComboBox x:Name="ed2" SelectedItem="{Binding MyFontFamily, ElementName=ThisWindow}" ItemsSource="{Binding Source={x:Static Fonts.SystemFontFamilies}}" Margin="406,231,369.4,124.2"/>
+        <Label Content="Sample text" FontFamily="{Binding ElementName=ed2, Path=SelectedItem}" Margin="406,203,369.4,153.2" />
+        <Label Content="Шрифт&#xD;&#xA;тексту:" HorizontalAlignment="Left" Margin="319,211,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        <Button Content="X" HorizontalAlignment="Left" Margin="836,11,0,0" VerticalAlignment="Top" Width="31" Height="23" Click="Close2"/>
+        <Slider x:Name="slider2" Value="0" Minimum="0" Maximum="50" SelectionStart="0" Height="30" TickFrequency="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True" AutoToolTipPlacement="TopLeft"
+            IsSelectionRangeEnabled="True" Margin="613,205,8.4,126.8" ValueChanged="Zxc2"/>
+        <Label Content="Розмір:" HorizontalAlignment="Left" Margin="536,203,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        <TextBox x:Name="path2" Template="{StaticResource txt2}" HorizontalAlignment="Left" Height="34" Margin="592,340,0,0" TextWrapping="Wrap" Text="C:\Users\bbbss\source\repos\Resume\Resume\bin\Debug\Resumes\" VerticalAlignment="Top" Width="255"/>
+        <Label Content="Шлях збереження:" HorizontalAlignment="Left" Margin="403,337,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black" Height="33" Width="167"/>
+
+
+    </Grid>
+</Window>

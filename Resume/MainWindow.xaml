@@ -1,0 +1,35 @@
+﻿<Window x:Class="Resume.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Resume"
+        mc:Ignorable="d"
+        Title="Мастер резюме" Height="450" Width="800" Icon="icon_resume.png" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF00BAFF" Offset="0.173"/>
+                <GradientStop Color="#FFEBFF00" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Label Content="Виберіть шаблон резюме:" HorizontalAlignment="Left" Margin="276,19,0,0" VerticalAlignment="Top" Height="37" Width="270" FontWeight="Bold" FontSize="20"/>
+
+        <Button Margin="534,94,70,106.6" Click="Open1">
+            <Image Source="resume1.png" Height="249" Width="202"/>
+        </Button>
+
+        <Button Margin="310,94,301,106.6" Click="Open2">
+            <Image Source="resume2.png" Height="248" Width="199"/>
+        </Button>
+
+        <Button Margin="86,94,524,106.6" Click="Open3" RenderTransformOrigin="0.444,0.522">
+            <Image Source="resume3.png" Height="249" Width="224" />
+        </Button>
+
+        <Label Content="Мастер резюме" HorizontalAlignment="Left" Margin="45,4,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="41" Width="142" FontSize="16"/>
+        <Image HorizontalAlignment="Left" Height="41" Margin="5,4,0,0" VerticalAlignment="Top" Width="35" Source="icon_resume.png" RenderTransformOrigin="0.08,-0.415"/>
+        <Button Content="X" HorizontalAlignment="Left" Margin="759,4,0,0" VerticalAlignment="Top" Width="31" FontWeight="Bold" Height="31" Click="Cls"/>
+    </Grid>
+</Window>
